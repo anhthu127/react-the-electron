@@ -24,9 +24,9 @@ function createWindow() {
       : `file://${path.resolve(__dirname, "..", "build", "index.html")}`
   );
 
-  if (isDev) {
-    mainWindow.webContents.openDevTools();
-  }
+  // if (isDev) {
+  //   mainWindow.webContents.openDevTools();
+  // }
 
   mainWindow.on("closed", () => {
     mainWindow = null;
