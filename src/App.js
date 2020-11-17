@@ -1,10 +1,11 @@
 import "./App.css";
+import FooterBar from "./components/footer";
 
 function App() {
   return (
     <div className="App">
       <div>main content</div>
-      <div>footer</div>
+      <FooterBar />
     </div>
   );
 }
