@@ -1,0 +1,11 @@
+{
+  "theme": {
+    "primary": "#A1B2AA",
+    "secondary": "#FFFFFF",
+    "primary_background": "#FFFFFF",
+    "secondary_background": "#FFFFFF",
+    "primary_font": "#FFFFFF",
+    "secondary_font": "#FFFFFF"
+  },
+  "default_prefs": {}
+}
