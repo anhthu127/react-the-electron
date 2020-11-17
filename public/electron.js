@@ -31,6 +31,9 @@ function createWindow() {
   mainWindow.on("closed", () => {
     mainWindow = null;
   });
+
+  // Hide menu bar since we are not going to use it
+  mainWindow.setMenuBarVisibility(false);
 }
 
 app.on("ready", createWindow);
