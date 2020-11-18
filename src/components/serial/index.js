@@ -13,7 +13,7 @@ export default function SerialSettings() {
   const [settings, setSettings] = useState({
     stop_bits: 1,
     baudrate: 115200,
-    databits: 8,
+    data_bits: 8,
     parity: "odd",
   });
 
@@ -29,9 +29,9 @@ export default function SerialSettings() {
 
   return (
     <SerialContainer>
+      <img src={Antenna} alt="Configure Communication" />
+      <h2>Serial Settings</h2>
       <form>
-        <img src={Antenna} alt="Configure Communication" />
-
         <div>
           <label>Baudrate: </label>
           <TextField
@@ -77,10 +77,10 @@ export default function SerialSettings() {
             <div>
               <label>Data bits: </label>
               <TextField
-                id="databits"
+                id="data_bits"
                 size="small"
                 type="number"
-                value={settings.databits}
+                value={settings.data_bits}
                 onChange={handleChange}
                 InputProps={{ disableUnderline: true, min: 5, max: 8 }}
               />
@@ -104,6 +104,7 @@ export default function SerialSettings() {
             </div>
           </div>
         )}
+
         <label className="AdvancedOptions" onClick={handleAdvancedOptions}>
           {advanced ? "Hide" : "Show"} advanced options
         </label>

@@ -1,16 +1,30 @@
 import styled from "styled-components";
 
-export const HomeContainer = styled.div`
+export const Content = styled.div`
   text-align: center;
+
+  width: 100%;
+
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 
   .Table {
     display: table;
     width: 100%;
+    min-height: 350px;
   }
 
   .Cell {
     display: table-cell;
-    width: 100px;
+    max-width: 100px;
+  }
+
+  .LoadDashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   img {
@@ -20,6 +34,8 @@ export const HomeContainer = styled.div`
 
   hr {
     width: 90%;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
 
   input {

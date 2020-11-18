@@ -1,4 +1,6 @@
-import { HomeContainer } from "./styles";
+import { useState } from "react";
+
+import { Content } from "./styles";
 
 import SerialSettings from "../../components/serial";
 
@@ -7,29 +9,38 @@ import Launch from "../../assets/icons/launch.png";
 import Chart from "../../assets/icons/line-chart.png";
 
 export default function Home() {
+  const [showCustomizeDashboard, setShowCustomizeDashboard] = useState(true);
+
   return (
-    <HomeContainer>
+    <Content>
       <div className="Table">
         <div className="Cell">
-          <div>Serial Settings</div>
           <SerialSettings />
         </div>
         <div className="Cell">
-          <div>Variables</div>
-          <div>
-            <img src={Universe} alt="Variables" />
+          <img src={Universe} alt="Variables" />
+          <h2>Manage Variables</h2>
+          <label>
+            {15} variables inserted <br />
+            Click here to create, update and remove variables
+          </label>
+        </div>
+
+        {showCustomizeDashboard && (
+          <div className="Cell">
+            <img src={Chart} alt="Configure Dashboard" />
+            <h2>Customize Dashboard Dashboard</h2>
+            <label>
+              All set! <br /> Click here to create new dashboard
+            </label>
           </div>
-        </div>
-        <div className="Cell">
-          <div>Customize Layout</div>
-          <img src={Chart} alt="Configure Layout" />
-        </div>
+        )}
       </div>
       <hr />
-      <div>
-        <img src={Launch} alt="Load Layout" />
-        Load Layout
+      <div className="LoadDashboard">
+        <h2>Launch Existing Setup</h2>
+        <img src={Launch} alt="Load Dashboard" />
       </div>
-    </HomeContainer>
+    </Content>
   );
 }
