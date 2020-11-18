@@ -14,7 +14,8 @@ export const HomeContainer = styled.div`
   }
 
   img {
-    width: 150px;
+    width: 80px;
+    margin: 5px;
   }
 
   hr {

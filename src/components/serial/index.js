@@ -5,9 +5,11 @@ import { SerialContainer } from "./styles";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 
-import Antenna from "../../assets/icons/antena.png";
+import Antenna from "../../assets/icons/antenna.png";
 
 export default function SerialSettings() {
+  const [advanced, setAdvanced] = useState(false);
+
   const [settings, setSettings] = useState({
     stop_bits: 1,
     baudrate: 115200,
@@ -17,22 +19,19 @@ export default function SerialSettings() {
 
   const comPorts = ["COM1", "COM2", "COM3"];
 
+  const handleChange = (e) => {
+    setSettings({ ...settings, [e.currentTarget.id]: e.currentTarget.value });
+  };
+
+  const handleAdvancedOptions = () => {
+    setAdvanced(!advanced);
+  };
+
   return (
     <SerialContainer>
       <form>
-        <div>Serial Settings</div>
         <img src={Antenna} alt="Configure Communication" />
-        <div>
-          <label>Stop Bits: </label>
-          <TextField
-            id="stop_bits"
-            size="small"
-            type="number"
-            min="0"
-            max="1"
-            value={settings.stop_bits}
-          />
-        </div>
+
         <div>
           <label>Baudrate: </label>
           <TextField
@@ -41,33 +40,19 @@ export default function SerialSettings() {
             type="number"
             min="0"
             value={settings.baudrate}
+            onChange={handleChange}
+            InputProps={{ disableUnderline: true, min: 0 }}
           />
-        </div>
-        <div>
-          <label>Data bits: </label>
-          <TextField
-            id="databits"
-            size="small"
-            type="number"
-            min="5"
-            max="8"
-            value={settings.databits}
-          />
-        </div>
-        <div>
-          <label>Parity: </label>
-          <TextField id="parity" select size="small">
-            <MenuItem key="odd" value={"odd"}>
-              odd
-            </MenuItem>
-            <MenuItem key="even" value={"even"}>
-              even
-            </MenuItem>
-          </TextField>
         </div>
         <div>
           <label>Port: </label>
-          <TextField id="port" select size="small">
+          <TextField
+            id="port"
+            select
+            size="small"
+            onChange={handleChange}
+            InputProps={{ disableUnderline: true }}
+          >
             {comPorts.map((comPort) => (
               <MenuItem key={comPort} value={comPort}>
                 {comPort}
@@ -75,6 +60,53 @@ export default function SerialSettings() {
             ))}
           </TextField>
         </div>
+
+        {advanced && (
+          <div>
+            <div>
+              <label>Stop Bits: </label>
+              <TextField
+                id="stop_bits"
+                size="small"
+                type="number"
+                value={settings.stop_bits}
+                onChange={handleChange}
+                InputProps={{ disableUnderline: true, min: 0, max: 1 }}
+              />
+            </div>
+            <div>
+              <label>Data bits: </label>
+              <TextField
+                id="databits"
+                size="small"
+                type="number"
+                value={settings.databits}
+                onChange={handleChange}
+                InputProps={{ disableUnderline: true, min: 5, max: 8 }}
+              />
+            </div>
+            <div>
+              <label>Parity: </label>
+              <TextField
+                id="parity"
+                select
+                size="small"
+                onChange={handleChange}
+                InputProps={{ disableUnderline: true }}
+              >
+                <MenuItem key="odd" value={"odd"}>
+                  odd
+                </MenuItem>
+                <MenuItem key="even" value={"even"}>
+                  even
+                </MenuItem>
+              </TextField>
+            </div>
+          </div>
+        )}
+        <label className="AdvancedOptions" onClick={handleAdvancedOptions}>
+          {advanced ? "Hide" : "Show"} advanced options
+        </label>
       </form>
     </SerialContainer>
   );

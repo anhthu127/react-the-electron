@@ -2,8 +2,8 @@ import { HomeContainer } from "./styles";
 
 import SerialSettings from "../../components/serial";
 
-import Universo from "../../assets/icons/universo.png";
-import Launch from "../../assets/icons/lancamento.png";
+import Universe from "../../assets/icons/universe.png";
+import Launch from "../../assets/icons/launch.png";
 import Chart from "../../assets/icons/line-chart.png";
 
 export default function Home() {
@@ -11,12 +11,13 @@ export default function Home() {
     <HomeContainer>
       <div className="Table">
         <div className="Cell">
+          <div>Serial Settings</div>
           <SerialSettings />
         </div>
         <div className="Cell">
           <div>Variables</div>
           <div>
-            <img src={Universo} alt="Variables" />
+            <img src={Universe} alt="Variables" />
           </div>
         </div>
         <div className="Cell">
