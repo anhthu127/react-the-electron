@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-const config = require("../../config/config.json");
-
 export const HomeContainer = styled.div`
   text-align: center;
 
@@ -16,10 +14,14 @@ export const HomeContainer = styled.div`
   }
 
   img {
-    width: 200px;
+    width: 150px;
   }
 
   hr {
     width: 90%;
+  }
+
+  input {
+    text-align: right;
   }
 `;

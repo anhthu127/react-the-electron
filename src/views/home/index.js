@@ -1,8 +1,9 @@
 import { HomeContainer } from "./styles";
 
+import SerialSettings from "../../components/serial";
+
 import Universo from "../../assets/icons/universo.png";
 import Launch from "../../assets/icons/lancamento.png";
-import Antenna from "../../assets/icons/antena.png";
 import Chart from "../../assets/icons/line-chart.png";
 
 export default function Home() {
@@ -10,24 +11,23 @@ export default function Home() {
     <HomeContainer>
       <div className="Table">
         <div className="Cell">
-          <div>Config Serial</div>
-          <img src={Antenna} alt="Configure Communication" />
+          <SerialSettings />
         </div>
         <div className="Cell">
-          <div>Configurar Variáveis</div>
+          <div>Variables</div>
           <div>
-            <img src={Universo} alt="Configurar variáveis" />
+            <img src={Universo} alt="Variables" />
           </div>
         </div>
         <div className="Cell">
-          <div>Configurar Layout</div>
+          <div>Customize Layout</div>
           <img src={Chart} alt="Configure Layout" />
         </div>
       </div>
       <hr />
       <div>
-        <div>Carregar layout</div>
-        <img src={Launch} alt="Carregar Layout" />
+        <img src={Launch} alt="Load Layout" />
+        Load Layout
       </div>
     </HomeContainer>
   );
