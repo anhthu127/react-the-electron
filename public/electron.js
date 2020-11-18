@@ -10,10 +10,9 @@ let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 800,
+    width: 1000,
     height: 600,
     webPreferences: {
-      // Permite acesso a API nativa do electron
       nodeIntegration: true,
     },
   });
@@ -23,10 +22,6 @@ function createWindow() {
       ? "http://localhost:3000"
       : `file://${path.resolve(__dirname, "..", "build", "index.html")}`
   );
-
-  // if (isDev) {
-  //   mainWindow.webContents.openDevTools();
-  // }
 
   mainWindow.on("closed", () => {
     mainWindow = null;
