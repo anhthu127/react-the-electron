@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const config = require("../../config/config.json");
+const config = require("../../settings/settings.json");
 
 export const Footer = styled.div`
   position: fixed;
