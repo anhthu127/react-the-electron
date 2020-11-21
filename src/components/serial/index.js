@@ -42,6 +42,7 @@ export default function SerialSettings() {
             value={settings.baudrate}
             onChange={handleChange}
             InputProps={{ disableUnderline: true, min: 0 }}
+            className="Baudrate"
           />
         </div>
         <div>

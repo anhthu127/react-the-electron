@@ -8,6 +8,6 @@ export const SerialContainer = styled.div`
 
   input {
     max-width: 80px;
-    text-align: center;
+    text-align: left;
   }
 `;
