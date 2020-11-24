@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const SerialContainer = styled.div`
+  text-align: center;
+
   .AdvancedOptions {
     font-size: 10px;
     cursor: pointer;
@@ -8,6 +10,11 @@ export const SerialContainer = styled.div`
 
   input {
     max-width: 80px;
-    text-align: left;
+    text-align: center;
+  }
+
+  img {
+    width: 80px;
+    margin: 5px;
   }
 `;

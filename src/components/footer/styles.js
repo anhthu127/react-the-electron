@@ -17,4 +17,5 @@ export const Footer = styled.div`
   align-items: center;
 
   margin: 0px;
+  padding-left: 5px;
 `;
