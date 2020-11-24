@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SerialContainer = styled.div`
+export const Container = styled.div`
   text-align: center;
 
   .AdvancedOptions {

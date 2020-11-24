@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { React, useState } from "react";
 
-import { SerialContainer } from "./styles";
+import { Container } from "./styles";
 
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -28,7 +28,7 @@ export default function SerialSettings() {
   };
 
   return (
-    <SerialContainer>
+    <Container>
       <img src={Antenna} alt="Configure Communication" />
       <h2>Serial Settings</h2>
       <form>
@@ -110,6 +110,6 @@ export default function SerialSettings() {
           {advanced ? "Hide" : "Show"} advanced options
         </label>
       </form>
-    </SerialContainer>
+    </Container>
   );
 }
