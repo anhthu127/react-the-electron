@@ -1,6 +1,6 @@
 import "./App.css";
 
-import FooterBar from "./components/footer";
+import Footer from "./components/footer";
 import Home from "./views/home";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <div>
         <Home />
       </div>
-      <FooterBar />
+      <Footer />
     </div>
   );
 }
