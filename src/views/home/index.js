@@ -1,15 +1,26 @@
-import { useState } from "react";
+import { React, useState } from "react";
 
 import { Content } from "./styles";
 
-import SerialSettings from "../../components/serial";
+import Modal from "../../components/modal";
+import SerialSettings from "../../components/serialSettings";
+import VariablesSettings from "../../components/variablesSettings";
 
 import Universe from "../../assets/icons/universe.png";
 import Launch from "../../assets/icons/launch.png";
 import Chart from "../../assets/icons/line-chart.png";
 
 export default function Home() {
-  const [showCustomizeDashboard, setShowCustomizeDashboard] = useState(true);
+  const [showDashboardOption, setShowDashboardOption] = useState(true);
+  const [showVariableSettings, setShowVariableSettings] = useState(false);
+
+  const handleOpenVariables = () => {
+    setShowVariableSettings(true);
+  };
+
+  const handleCloseVariables = () => {
+    setShowVariableSettings(false);
+  };
 
   return (
     <Content>
@@ -17,7 +28,7 @@ export default function Home() {
         <div className="Cell">
           <SerialSettings />
         </div>
-        <div className="Cell">
+        <div className="Cell" onClick={handleOpenVariables}>
           <img src={Universe} alt="Variables" />
           <h2>Manage Variables</h2>
           <label>
@@ -26,10 +37,10 @@ export default function Home() {
           </label>
         </div>
 
-        {showCustomizeDashboard && (
+        {showDashboardOption && (
           <div className="Cell">
             <img src={Chart} alt="Configure Dashboard" />
-            <h2>Customize Dashboard Dashboard</h2>
+            <h2> Dashboard Dashboard</h2>
             <label>
               All set! <br /> Click here to create new dashboard
             </label>
@@ -41,6 +52,12 @@ export default function Home() {
         <h2>Launch Existing Setup</h2>
         <img src={Launch} alt="Load Dashboard" />
       </div>
+
+      <Modal
+        component={VariablesSettings}
+        handleClose={handleCloseVariables}
+        open={showVariableSettings}
+      />
     </Content>
   );
 }
