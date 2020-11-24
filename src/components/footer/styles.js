@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const config = require("../../settings/settings.json");
 
-export const Footer = styled.div`
+export const Container = styled.div`
   position: fixed;
   left: 0;
   bottom: 0;

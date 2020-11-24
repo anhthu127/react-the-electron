@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Footer } from "./styles";
+import { Container } from "./styles";
 
-import SerialSettings from "./../serial";
+import SerialSettings from "../serialSettings";
 import Modal from "./../modal";
 
-export default function FooterBar() {
+export default function Footer() {
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
@@ -17,12 +17,12 @@ export default function FooterBar() {
   };
 
   return (
-    <React.Fragment>
-      <Footer>
+    <Container>
+      <div>
         <label onClick={handleOpen}>PT COM1 BD 9600</label>
-      </Footer>
+      </div>
 
       <Modal component={SerialSettings} handleClose={handleClose} open={open} />
-    </React.Fragment>
+    </Container>
   );
 }
