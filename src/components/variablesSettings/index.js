@@ -117,30 +117,32 @@ export default function VariableSettings() {
 
     if (filteredVariables.length) {
       return (
-        <div className="Table">
-          <div className="TableRow">
-            <div className="TableCell">Id</div>
-            <div className="TableCell">Color</div>
-            <div className="TableCell">Name</div>
-            <div className="TableCell">Unit</div>
-            <div className="TableCell">Options</div>
-          </div>
-          {filteredVariables.map((variable) => (
-            <div className="TableRow" key={variable.id}>
-              <div className="TableCell">{variable.id}</div>
-              <div className="TableCell">Col</div>
-              <div className="TableCell">{variable.name}</div>
-              <div className="TableCell">{variable.unit}</div>
-              <IconButton
-                aria-label="Remove variable"
-                component="span"
-                size="small"
-                onClick={() => removeVariable(variable.id)}
-              >
-                <FaTrashAlt />
-              </IconButton>
+        <div className="TableWrapper">
+          <div className="Table">
+            <div className="TableHead">
+              <div className="TableCell">Id</div>
+              <div className="TableCell">Color</div>
+              <div className="TableCell">Name</div>
+              <div className="TableCell">Unit</div>
+              <div className="TableCell">Options</div>
             </div>
-          ))}
+            {filteredVariables.map((variable) => (
+              <div className="TableRow" key={variable.id}>
+                <div className="TableCell">{variable.id}</div>
+                <div className="TableCell">Col</div>
+                <div className="TableCell">{variable.name}</div>
+                <div className="TableCell">{variable.unit}</div>
+                <IconButton
+                  aria-label="Remove variable"
+                  component="span"
+                  size="small"
+                  onClick={() => removeVariable(variable.id)}
+                >
+                  <FaTrashAlt />
+                </IconButton>
+              </div>
+            ))}
+          </div>
         </div>
       );
     } else {

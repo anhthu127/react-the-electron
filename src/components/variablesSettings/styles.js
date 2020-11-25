@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   text-align: center;
   max-width: 500px;
-  max-heigh: 500px;
 
   input {
     text-align: center;
@@ -30,11 +29,30 @@ export const Container = styled.div`
     margin-right: 10px;
   }
 
+  .TableWrapper {
+    margin-top: 15px;
+
+    width: 100%;
+    max-height: 500px;
+
+    overflow-y: auto;
+  }
+
   .Table {
     display: table;
-    width: 100%;
 
-    margin-top: 15px;
+    width: 100%;
+  }
+
+  .TableHead {
+    display: table-row;
+
+    .TableCell {
+      position: sticky;
+      top: 0;
+
+      background: white;
+    }
   }
 
   .TableRow {
