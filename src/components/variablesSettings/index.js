@@ -11,7 +11,7 @@ import { Container } from "./styles";
 
 export default function VariableSettings() {
   const [message, setMessage] = useState("");
-  const [alertSeverity, setAlertSeverity] = useState("");
+  const [alertSeverity, setAlertSeverity] = useState("success");
 
   const [variable, setVariable] = useState({ id: "", name: "", unit: "" });
   const [variables, setVariables] = useState([]);
@@ -25,7 +25,7 @@ export default function VariableSettings() {
       setVariables((variables) => [...variables, variable].sort(sortVariables));
       setVariable({ id: "", name: "", unit: "" });
 
-      setMessage("Variable created");
+      setMessage("Variable created!");
       setAlertSeverity("success");
     } else {
       setAlertSeverity("error");
@@ -47,7 +47,7 @@ export default function VariableSettings() {
   const removeVariable = (id) => {
     setVariables(variables.filter((v) => v.id !== id));
 
-    setMessage("Variable removed");
+    setMessage("Variable removed!");
     setAlertSeverity("success");
   };
 
@@ -59,7 +59,7 @@ export default function VariableSettings() {
 
       return false;
     } else if (variables.filter((v) => v.id === variable.id).length) {
-      setMessage("Variable ID already exists");
+      setMessage("Variable ID already exists!");
 
       return false;
     }
@@ -178,7 +178,7 @@ export default function VariableSettings() {
           {message}
         </Alert>
       </Collapse>
-      <h1>Create or Search Variable</h1>
+      <h1>Manage Variables</h1>
       <label>
         Create new variable or search existing ones by id or name to
         edit/remove.
